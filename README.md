@@ -19,15 +19,17 @@ This includes:
 * Being able to use large band configurations (40/80/160) where the continuous spectrum allows is.
 * Being able to ignore DFS.
 
+The caveat is that your hardware needs to support what you're trying to do (e.g. this won't give a 2.4Ghz only card 5Ghz capabilities).
+
 Warnings
 --------
 
 Of course, this let's you do dangerous things too, and you need to be very careful how you use this. In particular:
-* Many of these configurations are completely illegal in many different countries. Passive monitoring of those frequencies isn't likely to get you caught, but transmitting at full power in some of them could not only get you in trouble, but also interfere with critical services such as emergency services.
+* Many of these configurations are completely illegal in many different countries. Passive monitoring of those frequencies isn't likely to get you caught, but transmitting at full power in some of them could not only get you in trouble, but also interfere with critical services such as emergency services. Here's a list of actions taken against those caught violating FCC rules in this way in the US https://www.fcc.gov/general/u-nii-and-tdwr-interference-enforcement
 * Many of these configurations are impossible, for example, channel 14 (2474-2494) should only be available in Japan, at 20Mhz width and 802.11b only (no OFDM). However, with this configuration, you may be able to violate all of that and create a network no device would be able to connect to.
 * You could break your device. Transmitting at too high power on frequencies or configurations the firmware/hardware never thought anyone could/would may lead to undesirable consequences to your hardware.
 
-When in doubt, this wiki page usually has the latest details on which wifi channels are available in which country:
+When in doubt, don't transmit! This wiki page usually has the latest details on which wifi channels are available in which country:
 https://en.wikipedia.org/wiki/List_of_WLAN_channels
 
 Installing
