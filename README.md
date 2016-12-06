@@ -3,7 +3,7 @@ A modified frequency regulatory domain configuration that doesn't limit you.
 
 Overview
 ---------
-Different countries enforce different frequency restrictions on the various wifi channels. This can be a pain if you card/OS is forcing you into a different configuration than the one you need. There are numerous reasons why this may be happening. From drivers favouring EEPROM configurations over your settings to weird decision making based on observed network activity. Either way, the discerning wifi hacker doesn't want to have to bother with such things.
+Different countries enforce different frequency restrictions on the various wifi channels. This can be a pain if your card/OS is forcing you into a different configuration than the one you need. There are numerous reasons why this may be happening. From drivers favouring EEPROM configurations over your settings to weird decision making based on observed network activity. Either way, the discerning wifi hacker doesn't want to have to bother with such things.
 
 Contents
 --------
