@@ -35,7 +35,7 @@ https://en.wikipedia.org/wiki/List_of_WLAN_channels
 Installing
 ----------
 
-You need to do two things to install this. The first is to overwrite your existing regulatory.bin with the new one. The second is to copy my public key to the right directory.
+If you have a crda compiled with external key support, you need to do two things to install this. The first is to overwrite your existing regulatory.bin with the new one. The second is to copy my public key to the right directory.
 
 When overwriting the .bin, make sure to make a backup of the original so you can go back to normal wifi function if you need to/want to.
 
@@ -65,9 +65,25 @@ iw reg set ZA
 If you change to a new locale that isn't your current, the new setting will take effect. 
 ```
 iw reg get 
+```
+You should see something like:
+```
+country XX: DFS-UNSET
+	(2400 - 2494 @ 80), (N/A, 30), (N/A)
+	(4910 - 4990 @ 80), (N/A, 30), (N/A)
+	(5030 - 5090 @ 40), (N/A, 30), (N/A)
+	(5150 - 5350 @ 160), (N/A, 30), (N/A)
+	(5470 - 5730 @ 160), (N/A, 30), (N/A)
+	(5725 - 5875 @ 80), (N/A, 30), (N/A)
+	(17100 - 17300 @ 160), (N/A, 30), (N/A)
+	(57000 - 66000 @ 2160), (N/A, 40), (N/A)
+```
+The country doesn't matter (all countries are set to the same). But you should see that list of frequencies, anything less or with DFS options, and your changes to regulatory.bin haven't been applied, either because you need to compile your own version that trust your key (see the link at the end) or because you overwrote the wrong regulatory.bin.
+
+```
 iw list|grep dBm
 ```
-These will give you a view of the resulting configuration. The first a list of the regulatory restrictions, and the second the net result of the channels available to you.
+These will give you a view of the resulting configuration. The first a list of the regulatory restrictions, and the second the net result of the channels available to you. You shouldn't see any "disabled" notes here, if you do, and you applied the crda changes correctly, then it means your firmware is preventing use of these channels.
 
 Making your own
 ---------------
