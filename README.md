@@ -85,6 +85,12 @@ iw list|grep dBm
 ```
 These will give you a view of the resulting configuration. The first a list of the regulatory restrictions, and the second the net result of the channels available to you. You shouldn't see any "disabled" notes here, if you do, and you applied the crda changes correctly, then it means your firmware is preventing use of these channels.
 
+If it doesn't seem to be working, try running:
+```
+regdbdump /lib/crda/regulatory.bin
+```
+If the output includes `Database signature verification failed`, your version of crda is probably compiled with static signatures, and you will need to compile and install your own crda binary using the instructions linked below. Fedora is known to use static signatures.
+
 Making your own
 ---------------
 
